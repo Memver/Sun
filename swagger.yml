@@ -8,6 +8,7 @@ info:
   description: The API for booking and find industries
 tags:
   - name: Industry
+  - name: Person
 
 paths:
   /industry:
@@ -50,7 +51,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Industry'
+              $ref: '#/components/schemas/createIndustry'
       responses:
         '200':
           description: return industries by params
@@ -101,6 +102,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Industry'
+        "default":
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /person:
+    get:
+      tags:
+        - Person
+      summary: getAllPersons
+      description: return allPersons
+      operationId: getAllPersons
+      responses:
+        '200':
+          description: return allPersons
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persons'
         "default":
           description: error
           content:
@@ -177,6 +199,10 @@ components:
       properties:
         id:
           type: integer
+        adressId:
+          type: integer
+        personId:
+          type: integer
         city:
           type: string
         street:
@@ -199,6 +225,8 @@ components:
           type: string
       example:
         id: 1
+        addresId: 5
+        personId: 3
         city: Moscow
         street: Pushkina
         home: 19
@@ -214,6 +242,62 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Industry'
+    Person:
+      type: object
+      properties:
+        id:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        phoneNumber:
+          type: integer
+      example:
+        id: 4
+        firstName: Elena
+        lastName: Nosova
+        phoneNumber: 89236782223
+
+    Persons:
+      type: array
+      items:
+        $ref: '#/components/schemas/Person'
+
+    createIndustry:
+      type: object
+      properties:
+        city:
+          type: string
+        street:
+          type: string
+        home:
+          type: integer
+        building:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        phoneNumber:
+          type: integer
+        target:
+          type: string
+        area:
+          type: integer
+        view:
+          type: string
+      example:
+        city: Moscow
+        street: Pushkina
+        home: 19
+        building: A
+        firstName: Vasiliy
+        lastName: Sidorov
+        phoneNumber: 88005553535
+        target: sell
+        area: 200
+        view: singing
 
     Error:
       type: object
