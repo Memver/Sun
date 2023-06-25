@@ -9,6 +9,7 @@ info:
 tags:
   - name: Industry
   - name: Person
+  - name: Address
 
 paths:
   /industry:
@@ -25,7 +26,7 @@ paths:
         - $ref: '#/components/parameters/building'
         - $ref: '#/components/parameters/target'
         - $ref: '#/components/parameters/area'
-        - $ref: '#/components/parameters/view'
+        - $ref: '#/components/parameters/aim'
 
       responses:
         '200':
@@ -34,12 +35,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Industries'
-        "default":
-          description: error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
     post:
       tags:
         - Industry
@@ -59,12 +54,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Industry'
-        "default":
+        '400':
           description: error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error400'
   /industry/{id}:
     get:
       tags:
@@ -81,12 +76,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Industry'
-        "default":
+        '404':
           description: error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error404'
     delete:
       tags:
         - Industry
@@ -102,12 +97,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Industry'
-        "default":
+        '404':
           description: error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error404'
 
   /person:
     get:
@@ -123,12 +118,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Persons'
-        "default":
-          description: error
+  /address:
+    get:
+      tags:
+        - Address
+      summary: getAllAddress
+      description: return AllAddress
+      operationId: getAllAddress
+      responses:
+        '200':
+          description: return AllAddress
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Addresses'
 components:
   parameters:
     city:
@@ -178,8 +181,8 @@ components:
       in: query
       schema:
         type: integer
-    view:
-      name: view
+    aim:
+      name: aim
       in: query
       schema:
         type: string
@@ -194,6 +197,29 @@ components:
         minimum: 1
 
   schemas:
+    Address:
+      type: object
+      properties:
+        id:
+          type: integer
+        city:
+          type: string
+        street:
+          type: string
+        home:
+          type: integer
+        building:
+          type: string
+      example:
+        id: 3
+        city: Moscow
+        street: Pushkina
+        home: 24
+        building: B
+    Addresses:
+      type: array
+      items:
+        $ref: '#/components/schemas/Address'
     Industry:
       type: object
       properties:
@@ -221,7 +247,7 @@ components:
           type: string
         area:
           type: integer
-        view:
+        aim:
           type: string
       example:
         id: 1
@@ -236,7 +262,7 @@ components:
         phoneNumber: 88005553535
         target: sell
         area: 200
-        view: singing
+        aim: singing
 
     Industries:
       type: array
@@ -285,7 +311,7 @@ components:
           type: string
         area:
           type: integer
-        view:
+        aim:
           type: string
       example:
         city: Moscow
@@ -297,12 +323,19 @@ components:
         phoneNumber: 88005553535
         target: sell
         area: 200
-        view: singing
+        aim: singing
 
-    Error:
+    Error400:
       type: object
       properties:
         errorMessage:
           type: string
       example:
-        errorMessage: 400, incorrect city
+        errorMessage: bad request
+    Error404:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+      example:
+        errorMessage: not found
