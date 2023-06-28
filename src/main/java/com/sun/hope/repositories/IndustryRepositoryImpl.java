@@ -3,6 +3,9 @@ package com.sun.hope.repositories;
 import com.sun.hope.models.Address;
 import com.sun.hope.models.IndAddPer;
 import com.sun.hope.models.Industry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,10 +15,14 @@ import java.util.Map;
 
 import static com.sun.hope.repositories.PersonRepositoryImpl.*;
 
+@Repository
 public class IndustryRepositoryImpl implements IndustryRepository{
+
+    Logger logger = LoggerFactory.getLogger(IndustryRepositoryImpl.class);
 
     @Override
     public List<Industry> findAll() throws SQLException {
+        logger.info("run industryRepository findAll()");
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
 
@@ -32,6 +39,7 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public Industry findById(int id) throws SQLException{
+        logger.info("run industryRepository findById()");
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
 
@@ -51,6 +59,7 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public List<IndAddPer> findByParams(Industry industry, Address address) throws SQLException {
+        logger.info("run industryRepository findByParams()");
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
         String sql = "SELECT foo.id as id, addressId, personId, city," +
@@ -117,7 +126,8 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public String addCondition(String sql, String key, String value){
-        // если не пустая строка и не равен нулю
+        logger.info("run industryRepository addCondition()");
+        // если не пустая строка
         if(!value.equals("")){
             if(sql.endsWith("WHERE")){
                 sql += " UPPER("+key+") = '"+value.toUpperCase()+"'";
@@ -130,6 +140,7 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public int findIdByName(Industry industry) throws SQLException{
+        logger.info("run industryRepository findIdByName()");
         // Поиск id человека по имени
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
@@ -157,6 +168,7 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public Industry add(Industry industry) throws SQLException{
+        logger.info("run industryRepository add()");
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
 
@@ -188,6 +200,7 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public Industry deleteById(int id) throws SQLException{
+        logger.info("run industryRepository deleteById()");
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
 
@@ -205,6 +218,7 @@ public class IndustryRepositoryImpl implements IndustryRepository{
 
     @Override
     public IndAddPer toIAP(int id) throws SQLException{
+        logger.info("run industryRepository toIAP()");
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
 

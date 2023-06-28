@@ -1,6 +1,7 @@
 package com.sun.hope.repositories;
 
 import com.sun.hope.models.Address;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 import static com.sun.hope.repositories.PersonRepositoryImpl.*;
 
+@Repository
 public class AddressRepositoryImpl implements AddressRepository{
 
     @Override
