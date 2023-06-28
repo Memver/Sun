@@ -29,4 +29,16 @@ public class Er {
     public boolean targetCondition(String str){
         return (str.equals("sell") || str.equals("buy"));
     }
+
+    @Override
+    public boolean equals(Object o){
+        if (o == this) {
+            return true;
+        }
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
+        Er obj = (Er)o;
+        return this.getErrorMessage().equals(obj.getErrorMessage());
+    }
 }
