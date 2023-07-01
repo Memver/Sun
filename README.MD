@@ -39,9 +39,9 @@ Output: {"id":23,"addressId":15,"personId":5,"city":"Samara","street":"Lenina","
 
 Curl request for cmd Windows. Return created industry
 
-Input: curl "http://localhost:8080/industry" -H "Content-Type: application/json" -d "{\"city\": \"Volgograd\",\"street\": \"Lenina\",\"home\": 25,\"building\": \"A\",\"firstName\": \"Lena\",\"lastName\": \"Sidorova\",\"phoneNumber\": 88006663536,\"target\": \"sell\",\"area\": 250,\"aim\": \"talking\"}"
+Input: curl "http://localhost:8080/industry" -H "Content-Type: application/json" -d "{\"city\": \"Mosco\",\"street\": \"Leni\",\"home\": 53,\"building\": \"k\",\"firstName\": \"Vasiy\",\"lastName\": \"Sidorov\",\"phoneNumber\": 88005553535,\"target\": \"sell\",\"area\": 200,\"aim\": \"working\"}"
 
-Output: {"id":24,"addressId":16,"personId":5,"city":"Volgograd","street":"Lenina","home":25,"building":"A","firstName":"Lena","lastName":"Sidorova","phoneNumber":88006663536,"target":"sell","area":250,"aim":"talking"}
+Output: {"id":2,"addressId":2,"personId":1,"city":"Mosco","street":"Leni","home":53,"building":"k","firstName":"Vasiy","lastName":"Sidorov","phoneNumber":88005553535,"target":"sell","area":200,"aim":"working"}
 
 4. DELETE "deleteIndustryById"
 
