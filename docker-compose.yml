@@ -10,7 +10,7 @@ services:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: 1
     volumes:
-    - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
     restart: unless-stopped
 
 

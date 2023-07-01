@@ -1,0 +1,30 @@
+2023-07-01 15:25:09,664 INFO c.s.h.AggregatorApplication [main] Starting AggregatorApplication v0.0.1-SNAPSHOT using Java 17.0.7 with PID 9052 (C:\projects\sunGit\target\aggregator-0.0.1-SNAPSHOT.jar started by ka_ba in C:\projects\sunGit)
+2023-07-01 15:25:09,694 INFO c.s.h.AggregatorApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-07-01 15:25:10,669 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-01 15:25:10,766 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 4 JPA repository interfaces.
+2023-07-01 15:25:12,198 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-07-01 15:25:12,385 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2567 ms
+2023-07-01 15:25:12,589 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-01 15:25:12,978 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@710b30ef
+2023-07-01 15:25:12,982 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-01 15:25:13,170 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-01 15:25:13,312 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-07-01 15:25:13,315 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
+2023-07-01 15:25:13,681 INFO o.h.b.i.BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
+2023-07-01 15:25:14,022 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-01 15:25:14,142 INFO o.h.o.dialect [main] HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@675ffd1d
+2023-07-01 15:25:14,590 INFO o.h.b.i.BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
+2023-07-01 15:25:15,601 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-01 15:25:15,772 INFO o.h.t.s.i.e.GenerationTargetToDatabase [main] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-07-01 15:25:15,776 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 15:25:16,273 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-01 15:25:16,623 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-01 15:25:17,278 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-01 15:25:17,298 INFO c.s.h.AggregatorApplication [main] Started AggregatorApplication in 8.195 seconds (process running for 9.775)
+2023-07-01 15:25:28,896 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-01 15:25:28,902 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 6 ms
+2023-07-01 15:25:28,987 INFO c.s.h.c.PersonController [http-nio-8080-exec-1] run GET /person
+2023-07-01 15:25:29,983 INFO c.s.h.c.PersonController [http-nio-8080-exec-2] run GET /person
+2023-07-01 15:27:44,899 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 15:27:44,905 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-01 15:27:44,922 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

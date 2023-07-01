@@ -1,0 +1,341 @@
+openapi: 3.0.0
+servers:
+  - description: SwaggerHub API
+    url: http://localhost:8080/
+info:
+  version: "1.0.0"
+  title: aggregator-api
+  description: The API for booking and find industries
+tags:
+  - name: Industry
+  - name: Person
+  - name: Address
+
+paths:
+  /industry:
+    get:
+      tags:
+        - Industry
+      summary: getIndustriesByParams
+      description: return industries by params
+      operationId: getIndustriesByParams
+      parameters:
+        - $ref: '#/components/parameters/city'
+        - $ref: '#/components/parameters/street'
+        - $ref: '#/components/parameters/home'
+        - $ref: '#/components/parameters/building'
+        - $ref: '#/components/parameters/target'
+        - $ref: '#/components/parameters/area'
+        - $ref: '#/components/parameters/aim'
+
+      responses:
+        '200':
+          description: return industries by params
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Industries'
+    post:
+      tags:
+        - Industry
+      summary: createIndustry
+      description: create industry
+      operationId: createIndustry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createIndustry'
+      responses:
+        '200':
+          description: return industries by params
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Industry'
+        '400':
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+  /industry/{id}:
+    get:
+      tags:
+        - Industry
+      summary: getIndustryByIndustryId
+      description: return industry by industryId
+      operationId: getIndustriesByIndustryId
+      parameters:
+        - $ref: '#/components/parameters/PathId'
+      responses:
+        '200':
+          description: return industry by industryId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Industry'
+        '404':
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+    delete:
+      tags:
+        - Industry
+      summary: deleteByIndustryId
+      description: delete industry by industryId
+      operationId: deleteIndustrybyIndastryId
+      parameters:
+        - $ref: '#/components/parameters/PathId'
+      responses:
+        '200':
+          description: return industry by industryId
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Industry'
+        '404':
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error404'
+
+  /person:
+    get:
+      tags:
+        - Person
+      summary: getAllPersons
+      description: return allPersons
+      operationId: getAllPersons
+      responses:
+        '200':
+          description: return allPersons
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persons'
+  /address:
+    get:
+      tags:
+        - Address
+      summary: getAllAddress
+      description: return AllAddress
+      operationId: getAllAddress
+      responses:
+        '200':
+          description: return AllAddress
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Addresses'
+components:
+  parameters:
+    city:
+      name: city
+      in: query
+      schema:
+        type: string
+    street:
+      name: street
+      in: query
+      schema:
+        type: string
+    home:
+      name: home
+      in: query
+      schema:
+        type: integer
+    building:
+      name: building
+      in: query
+      schema:
+        type: string
+
+    firstName:
+      name: firstName
+      in: query
+      schema:
+        type: string
+    lastName:
+      name: lastName
+      in: query
+      schema:
+        type: string
+    phoneNumber:
+      name: phoneNumber
+      in: query
+      schema:
+        type: integer
+
+    target:
+      name: target
+      in: query
+      schema:
+        type: string
+    area:
+      name: area
+      in: query
+      schema:
+        type: integer
+    aim:
+      name: aim
+      in: query
+      schema:
+        type: string
+
+    PathId:
+      name: id
+      in: path
+      description: ID in path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+
+  schemas:
+    Address:
+      type: object
+      properties:
+        id:
+          type: integer
+        city:
+          type: string
+        street:
+          type: string
+        home:
+          type: integer
+        building:
+          type: string
+      example:
+        id: 3
+        city: Moscow
+        street: Pushkina
+        home: 24
+        building: B
+    Addresses:
+      type: array
+      items:
+        $ref: '#/components/schemas/Address'
+    Industry:
+      type: object
+      properties:
+        id:
+          type: integer
+        addressId:
+          type: integer
+        personId:
+          type: integer
+        city:
+          type: string
+        street:
+          type: string
+        home:
+          type: integer
+        building:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        phoneNumber:
+          type: integer
+        target:
+          type: string
+        area:
+          type: integer
+        aim:
+          type: string
+      example:
+        id: 1
+        addressId: 5
+        personId: 3
+        city: Moscow
+        street: Pushkina
+        home: 19
+        building: A
+        firstName: Vasiliy
+        lastName: Sidorov
+        phoneNumber: 88005553535
+        target: sell
+        area: 200
+        aim: singing
+
+    Industries:
+      type: array
+      items:
+        $ref: '#/components/schemas/Industry'
+    Person:
+      type: object
+      properties:
+        id:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        phoneNumber:
+          type: integer
+      example:
+        id: 4
+        firstName: Elena
+        lastName: Nosova
+        phoneNumber: 89236782223
+
+    Persons:
+      type: array
+      items:
+        $ref: '#/components/schemas/Person'
+
+    createIndustry:
+      type: object
+      properties:
+        city:
+          type: string
+        street:
+          type: string
+        home:
+          type: integer
+        building:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        phoneNumber:
+          type: integer
+        target:
+          type: string
+        area:
+          type: integer
+        aim:
+          type: string
+      example:
+        city: Moscow
+        street: Pushkina
+        home: 19
+        building: A
+        firstName: Vasiliy
+        lastName: Sidorov
+        phoneNumber: 88005553535
+        target: sell
+        area: 200
+        aim: singing
+
+    Error400:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+      example:
+        errorMessage: bad request
+    Error404:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+      example:
+        errorMessage: not found
