@@ -5,7 +5,6 @@ import com.sun.hope.models.IndAddPer;
 import com.sun.hope.models.Industry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.Map;
 
 import static com.sun.hope.repositories.PersonRepositoryImpl.*;
 
-@Repository
 public class IndustryRepositoryImpl implements IndustryRepository{
 
     Logger logger = LoggerFactory.getLogger(IndustryRepositoryImpl.class);

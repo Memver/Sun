@@ -1,13 +1,11 @@
 package com.sun.hope.repositories;
 
 import com.sun.hope.models.Person;
-import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
 public class PersonRepositoryImpl implements PersonRepository{
 
     public static final String url = "jdbc:postgresql://localhost:5433/postgres";
@@ -65,6 +63,7 @@ public class PersonRepositoryImpl implements PersonRepository{
         // если человек уже есть в БД, то он и возвращается
         if(hasInRep(person)){
             int id = findIdByName(person);
+            connection.close();
             return findById(id);
         }
 
