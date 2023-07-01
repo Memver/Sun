@@ -1,30 +1,59 @@
-2023-07-01 15:25:09,664 INFO c.s.h.AggregatorApplication [main] Starting AggregatorApplication v0.0.1-SNAPSHOT using Java 17.0.7 with PID 9052 (C:\projects\sunGit\target\aggregator-0.0.1-SNAPSHOT.jar started by ka_ba in C:\projects\sunGit)
-2023-07-01 15:25:09,694 INFO c.s.h.AggregatorApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-07-01 15:25:10,669 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-07-01 15:25:10,766 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 4 JPA repository interfaces.
-2023-07-01 15:25:12,198 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2023-07-01 15:25:12,385 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2567 ms
-2023-07-01 15:25:12,589 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-07-01 15:25:12,978 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@710b30ef
-2023-07-01 15:25:12,982 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-07-01 15:25:13,170 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-07-01 15:25:13,312 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.2.2.Final
-2023-07-01 15:25:13,315 INFO o.h.c.Environment [main] HHH000406: Using bytecode reflection optimizer
-2023-07-01 15:25:13,681 INFO o.h.b.i.BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
-2023-07-01 15:25:14,022 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-07-01 15:25:14,142 INFO o.h.o.dialect [main] HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@675ffd1d
-2023-07-01 15:25:14,590 INFO o.h.b.i.BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
-2023-07-01 15:25:15,601 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-07-01 15:25:15,772 INFO o.h.t.s.i.e.GenerationTargetToDatabase [main] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
-2023-07-01 15:25:15,776 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-07-01 15:25:16,273 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-07-01 15:25:16,623 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-07-01 15:25:17,278 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2023-07-01 15:25:17,298 INFO c.s.h.AggregatorApplication [main] Started AggregatorApplication in 8.195 seconds (process running for 9.775)
-2023-07-01 15:25:28,896 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-07-01 15:25:28,902 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 6 ms
-2023-07-01 15:25:28,987 INFO c.s.h.c.PersonController [http-nio-8080-exec-1] run GET /person
-2023-07-01 15:25:29,983 INFO c.s.h.c.PersonController [http-nio-8080-exec-2] run GET /person
-2023-07-01 15:27:44,899 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-07-01 15:27:44,905 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-07-01 15:27:44,922 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-01 16:54:18,628 INFO c.s.h.AggregatorApplication [restartedMain] Starting AggregatorApplication using Java 17.0.7 with PID 7996 (C:\projects\sunGit\target\classes started by ka_ba in C:\projects\sunGit)
+2023-07-01 16:54:18,653 INFO c.s.h.AggregatorApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-07-01 16:54:18,754 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-01 16:54:18,755 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-01 16:54:18,829 INFO o.s.b.d.c.l.DockerComposeLifecycleManager [restartedMain] Using Docker Compose file 'C:\projects\sunGit\docker-compose.yml'
+2023-07-01 16:54:21,712 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-01 16:54:21,832 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2023-07-01 16:54:23,490 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-07-01 16:54:23,658 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2838 ms
+2023-07-01 16:54:23,972 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-07-01 16:54:24,309 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f18b2c2
+2023-07-01 16:54:24,312 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-07-01 16:54:24,534 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-01 16:54:24,694 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-07-01 16:54:24,701 INFO o.h.c.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2023-07-01 16:54:25,188 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-07-01 16:54:25,492 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-07-01 16:54:25,641 INFO o.h.o.dialect [restartedMain] HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@6de6ee49
+2023-07-01 16:54:26,161 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-07-01 16:54:27,654 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-01 16:54:27,908 INFO o.h.t.s.i.e.GenerationTargetToDatabase [restartedMain] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-07-01 16:54:27,911 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 16:54:28,444 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-07-01 16:54:28,806 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-01 16:54:29,437 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-07-01 16:54:29,498 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-01 16:54:29,517 INFO c.s.h.AggregatorApplication [restartedMain] Started AggregatorApplication in 11.652 seconds (process running for 13.613)
+2023-07-01 16:54:35,482 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-07-01 16:54:35,484 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-2] Completed initialization in 2 ms
+2023-07-01 16:54:35,550 INFO c.s.h.c.PersonController [http-nio-8080-exec-2] run GET /person
+2023-07-01 16:54:39,473 INFO c.s.h.c.IndustryController [http-nio-8080-exec-3] run POST /industry
+2023-07-01 16:54:39,886 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-3] run industryRepository add()
+2023-07-01 16:54:39,928 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-3] run industryRepository findIdByName()
+2023-07-01 16:54:39,968 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-3] run industryRepository findIdByName()
+2023-07-01 16:54:40,001 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-3] run industryRepository findById()
+2023-07-01 16:54:40,038 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-3] run industryRepository toIAP()
+2023-07-01 16:54:42,995 INFO c.s.h.c.IndustryController [http-nio-8080-exec-4] run POST /industry
+2023-07-01 16:54:43,148 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-4] run industryRepository add()
+2023-07-01 16:54:43,167 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-4] run industryRepository findIdByName()
+2023-07-01 16:54:43,191 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-4] run industryRepository findById()
+2023-07-01 16:54:43,217 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-4] run industryRepository toIAP()
+2023-07-01 16:54:44,442 INFO c.s.h.c.IndustryController [http-nio-8080-exec-5] run POST /industry
+2023-07-01 16:54:44,601 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-5] run industryRepository add()
+2023-07-01 16:54:44,625 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-5] run industryRepository findIdByName()
+2023-07-01 16:54:44,652 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-5] run industryRepository findById()
+2023-07-01 16:54:44,688 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-5] run industryRepository toIAP()
+2023-07-01 16:54:45,628 INFO c.s.h.c.IndustryController [http-nio-8080-exec-6] run POST /industry
+2023-07-01 16:54:45,792 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-6] run industryRepository add()
+2023-07-01 16:54:45,814 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-6] run industryRepository findIdByName()
+2023-07-01 16:54:45,841 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-6] run industryRepository findById()
+2023-07-01 16:54:45,880 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-6] run industryRepository toIAP()
+2023-07-01 16:54:47,033 INFO c.s.h.c.IndustryController [http-nio-8080-exec-7] run POST /industry
+2023-07-01 16:54:47,211 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-7] run industryRepository add()
+2023-07-01 16:54:47,232 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-7] run industryRepository findIdByName()
+2023-07-01 16:54:47,265 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-7] run industryRepository findById()
+2023-07-01 16:54:47,296 INFO c.s.h.r.IndustryRepositoryImpl [http-nio-8080-exec-7] run industryRepository toIAP()
+2023-07-01 16:56:01,356 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-01 16:56:01,362 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-01 16:56:01,375 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

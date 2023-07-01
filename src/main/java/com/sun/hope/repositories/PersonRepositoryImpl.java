@@ -8,13 +8,18 @@ import java.util.List;
 
 public class PersonRepositoryImpl implements PersonRepository{
 
-    public static final String url = "jdbc:postgresql://localhost:5433/postgres";
+    public static final String url = "jdbc:postgresql://service-db/postgres";
     public static final String user = "postgres";
     public static final String password = "1";
 
     @Override
     public List<Person> findAll() throws SQLException {
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         PreparedStatement prepStat = connection.prepareStatement("SELECT * FROM person");
@@ -31,6 +36,11 @@ public class PersonRepositoryImpl implements PersonRepository{
     @Override
     public boolean hasInRep(Person person) throws SQLException
     {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         // Подключение к БД
         Connection connection = DriverManager.getConnection(url, user, password);
 
@@ -58,6 +68,11 @@ public class PersonRepositoryImpl implements PersonRepository{
     @Override
     public Person add(Person person) throws SQLException{
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // если человек уже есть в БД, то он и возвращается
@@ -88,6 +103,11 @@ public class PersonRepositoryImpl implements PersonRepository{
     @Override
     public int findIdByName( Person person) throws SQLException{
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Поиск id человека по имени
@@ -108,6 +128,11 @@ public class PersonRepositoryImpl implements PersonRepository{
     @Override
     public Person findById(int id) throws SQLException{
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Поиск человека по id

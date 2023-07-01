@@ -22,6 +22,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
     public List<Industry> findAll() throws SQLException {
         logger.info("run industryRepository findAll()");
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         PreparedStatement prepStat = connection.prepareStatement("SELECT * FROM industry");
@@ -39,6 +44,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
     public Industry findById(int id) throws SQLException{
         logger.info("run industryRepository findById()");
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Поиск человека по id
@@ -59,6 +69,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
     public List<IndAddPer> findByParams(Industry industry, Address address) throws SQLException {
         logger.info("run industryRepository findByParams()");
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
         String sql = "SELECT foo.id as id, addressId, personId, city," +
                 " street, home, building, firstName, lastName,\n" +
@@ -141,6 +156,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
         logger.info("run industryRepository findIdByName()");
         // Поиск id человека по имени
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Возвращаем строку в БД по входящим параметрам
@@ -168,6 +188,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
     public Industry add(Industry industry) throws SQLException{
         logger.info("run industryRepository add()");
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // если человек уже есть в БД, то он и возвращается
@@ -200,6 +225,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
     public Industry deleteById(int id) throws SQLException{
         logger.info("run industryRepository deleteById()");
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // запоминание площадки в переменную
@@ -218,6 +248,11 @@ public class IndustryRepositoryImpl implements IndustryRepository{
     public IndAddPer toIAP(int id) throws SQLException{
         logger.info("run industryRepository toIAP()");
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Поиск человека по id

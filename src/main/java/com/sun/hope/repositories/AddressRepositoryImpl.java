@@ -14,6 +14,11 @@ public class AddressRepositoryImpl implements AddressRepository{
     @Override
     public Address add(Address address) throws SQLException{
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // если адрес уже есть в БД, то он и возвращается
@@ -45,6 +50,11 @@ public class AddressRepositoryImpl implements AddressRepository{
     @Override
     public int findIdByName(Address address) throws SQLException{
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Возвращаем строку в БД по входящим параметрам
@@ -72,6 +82,11 @@ public class AddressRepositoryImpl implements AddressRepository{
     @Override
     public Address findById(int id) throws SQLException{
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         // Поиск человека по id
@@ -91,6 +106,11 @@ public class AddressRepositoryImpl implements AddressRepository{
     @Override
     public List<Address> findAll() throws SQLException {
         // Подключение к БД
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         Connection connection = DriverManager.getConnection(url, user, password);
 
         PreparedStatement prepStat = connection.prepareStatement("SELECT * FROM address");
