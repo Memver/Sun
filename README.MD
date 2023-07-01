@@ -1,8 +1,23 @@
-The API for booking and find industries
+# The API for booking and find industries
 
 Методы описаны в swagger.yml
 
-Examples of use:
+## Run
+1) you need maven and docker
+
+2) be in directory /sunGit
+
+Example: C:\projects\sunGit>
+
+3) mvn compile
+
+4) mvn package -DskipTests
+
+5) docker-compose build
+
+6) docker-compose up
+
+## Examples of use:
 
 1. GET "GetIndustryByParam". Return industry by parameters. Also can return all industries, if no parameters
 
@@ -36,7 +51,7 @@ Input: curl -X DELETE "http://localhost:8080/industry/4"
 
 Output: {"id":4,"addressId":2,"personId":2,"city":"Dolgon","street":"FDG","home":53,"building":"A","firstName":"Vas","lastName":"Sidorov","phoneNumber":88005553535,"target":"sell","area":200,"aim":"singing"}
 
-- 5. GET "getAllPerson". Return all people
+5. GET "getAllPerson". Return all people
 
 Curl request for cmd Windows
 
@@ -44,7 +59,7 @@ Input: curl "http://localhost:8080/person"
 
 Output: [{"id":1,"firstName":"Vasil","lastName":"Sidorov","phoneNumber":88005553535},{"id":2,"firstName":"Vas","lastName":"Sidorov","phoneNumber":88005553535},{"id":3,"firstName":"Vasiliy","lastName":"Sidorov","phoneNumber":88005553535},{"id":4,"firstName":"FFFFFFFFFFF","lastName":"FFFFFFFFFFF","phoneNumber":333333333},{"id":5,"firstName":"Lena","lastName":"Sidorova","phoneNumber":88006663536}]
 
-- 6. GET "getAllAddress". Return All addresses
+6. GET "getAllAddress". Return All addresses
 
 Curl request for cmd Windows
 
