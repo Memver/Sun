@@ -3,19 +3,15 @@
 Методы описаны в swagger.yml
 
 ## Run
-1) you need maven and docker
+1) you need docker
 
-2) be in directory /sunGit
+2) be in directory repository
 
-Example: C:\projects\sunGit>
+Example: C:\projects\sun>
 
-3) mvn compile
+3) docker-compose build
 
-4) mvn package -DskipTests
-
-5) docker-compose build
-
-6) docker-compose up
+4) docker-compose up
 
 ## Examples of use:
 
